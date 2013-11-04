@@ -35,7 +35,7 @@ avant-window-navigator (0.4.1~bzr830-1) unstable; urgency=low
    - Remove vala-awn binary, merged with libawn-dev.
    - Add Conflicts / Replaces: valac-awn for libawn-dev.
   * debian/libawn1.symbols:
-   - Update with new symbols. 
+   - Update with new symbols.
   * debian/gbp.conf:
    - Add gbp configuration.
   * debian/rules:
@@ -140,7 +140,7 @@ avant-window-navigator (0.4.0-1) unstable; urgency=low
    - Add mutter in the list of composite managers.
   * debian/copyright:
    - Update copyright and licenses.
-  * debian/libawn1.symbols: 
+  * debian/libawn1.symbols:
    - Add missing symbol.
 
  -- Julien Lavergne <julien.lavergne@gmail.com>  Mon, 07 Jun 2010 22:49:37 +0200
@@ -167,14 +167,14 @@ avant-window-navigator (0.3.2.1-5) unstable; urgency=medium
   * Switch to dpkg-source 3.0 (quilt) format
    - Remove build-depends on quilt.
    - Remove README.source for the usage of quilt.
-   - Remove usage of quilt in debian/rules. 
+   - Remove usage of quilt in debian/rules.
 
  -- Julien Lavergne <julien.lavergne@gmail.com>  Sun, 07 Feb 2010 13:41:53 +0100
 
 avant-window-navigator (0.3.2.1-4) unstable; urgency=low
 
   * debian/rules: Build python-awn for only 1 version of python.
-    (Closes: #531176) 
+    (Closes: #531176)
 
  -- Julien Lavergne <julien.lavergne@gmail.com>  Wed, 17 Jun 2009 00:20:41 +0200
 
@@ -197,10 +197,10 @@ avant-window-navigator (0.3.2.1-1) unstable; urgency=low
 
   * New Upstream Version.
   * debian/control
-   - Remove depends on python-gnome2 and python-gnome2-desktop for 
+   - Remove depends on python-gnome2 and python-gnome2-desktop for
      awn-manager, not needed anymore.
    - Add python-gtk2 as depends for python-awn.
-   - Remove depends on avant-window-navigator for awn-manager to avoid 
+   - Remove depends on avant-window-navigator for awn-manager to avoid
      circular dependency. This is unnecessary until awn depends on awn-manager
      for the migration script. (Closes: #520120).
    - Add libgnome-desktop-dev and libdbus-glib-1-dev as depends for libawn-dev.
@@ -213,10 +213,10 @@ avant-window-navigator (0.3.2.1-1) unstable; urgency=low
    - Move libawn-dbg section to debug.
    - Bump Standards-Version to 3.8.1 (no change needed).
   * debian/rules:
-   - Rewrite to drop the use of cdbs and build python bindings for all versions 
+   - Rewrite to drop the use of cdbs and build python bindings for all versions
      of python.
    - Switch from python-central to python-support.
-  * debian/pycompat: 
+  * debian/pycompat:
    - Remove.
   * debian/pyversions:
    - Add, python >= 2.4 is supported.
@@ -236,40 +236,40 @@ avant-window-navigator (0.3.2.1-1) unstable; urgency=low
 avant-window-navigator (0.3.2-1) unstable; urgency=low
 
   * New upstream release (Closes : #514681) (LP: #327443)
-   - Add a script to delay the start of awn when using the autostart. 
+   - Add a script to delay the start of awn when using the autostart.
      (Closes: #493640)
-   - Fix awn-manager permission when trying to edit some desktop file 
+   - Fix awn-manager permission when trying to edit some desktop file
     (LP: #260987)
    - Update position on screen resolution changes (LP: #276734)
   * debian/awn.wrapper
    - A script to update applets path using awn-applets-migration script.
-  * debian/*.install: 
+  * debian/*.install:
    - Add the themes directory to avant-window-navigator-data.install.
    - Add awn-autostart to avant-window-navigator.install.
    - Add awn-applets-migration to awn-manager.install.
    - Remove usr/bin/avant-window-navigator, handle by debian/rules.
-   - Install python bindings in *-packages instead of site-packages only, 
+   - Install python bindings in *-packages instead of site-packages only,
      needed for the python migration in squeeze (LP: #335785).
   * debian/control:
    - Add missing ${misc:Depends}.
    - Bump Build-Depends and Depends for vala to (>= 0.5.4).
-   - Set awn-manager as Depends rather than Recommends, needed by the 
+   - Set awn-manager as Depends rather than Recommends, needed by the
      awn-applets-migration script.
    - Remove unnecessary "Section: gnome"
    - Note that the libawn0-dbg contains debuggins symbols.
-   - Set Build-Depends on python (>= 2.5) instead of hardcoding the python 
+   - Set Build-Depends on python (>= 2.5) instead of hardcoding the python
      version.
   * debian/awn-autostart.1 & debian/awn-applets-migrations:
    - Add new man pages.
   * debian/avant-window-navigator.links
    - Symlink awn.1 with avant-window-navigator.1
   * debian/rules:
-   - Move avant-window-navigator to awn, and copy awn.wrapper to 
+   - Move avant-window-navigator to awn, and copy awn.wrapper to
      avant-window-navigator
    - Add new man pages.
   * debian/patches/
-   - 00-wm-behavior.patch : Don't bring the windows to the current workspace 
-     when the icon of the bar is clicked. Keep the same behavior that the 
+   - 00-wm-behavior.patch : Don't bring the windows to the current workspace
+     when the icon of the bar is clicked. Keep the same behavior that the
      gnome-panel applet.
    - 01-tasks-have-arrow.patch: Set the option "Tasks have arrow" by default.
    - 03-python-import.path : Update.
@@ -289,7 +289,7 @@ avant-window-navigator (0.3~bzr489-1) experimental; urgency=low
    - 02-awn-manager-applets.patch : dropped, merged upstream.
    - 03-python-import.patch : Update and add upstream and Debian bugtracker
      entry for this patch.
-  * debian/control: 
+  * debian/control:
    - Add libglade2-dev to Build-Depends.
    - Bump Standards-Version to 3.8.0.
    - Bump vala version to 0.3.4 for Depends and Build-Depends.
@@ -299,7 +299,7 @@ avant-window-navigator (0.3~bzr489-1) experimental; urgency=low
    - Update location of desktop files.
    - Install schemas-ini files.
   * debian/avant-window-navigator.install
-   - Update icons location. 
+   - Update icons location.
   * debian/rules:
    - Add --enable-gtk-doc flag to generate documentation.
    - Update version requirement for libawn0.
@@ -311,12 +311,12 @@ avant-window-navigator (0.3~bzr489-1) experimental; urgency=low
 avant-window-navigator (0.2.6-7) unstable; urgency=medium
 
   * debian/control
-   - Set a dependency on a composite manager rather than just suggest it. 
+   - Set a dependency on a composite manager rather than just suggest it.
      (Closes: #483673). Urgency set to medium as it's a RC bug.
   * debian/README.debian
    - Document how to enable composite manager for each application.
   * debian/patches/90_null_awn_cairo.patch
-   - From upstream, fix a possible crash when a applet return wrong 
+   - From upstream, fix a possible crash when a applet return wrong
      informations.
 
  -- Julien Lavergne <julien.lavergne@gmail.com>  Fri, 06 Jun 2008 15:58:24 +0200
@@ -324,15 +324,15 @@ avant-window-navigator (0.2.6-7) unstable; urgency=medium
 avant-window-navigator (0.2.6-6) unstable; urgency=low
 
   * debian/patches/04-fix-colormap.patch
-   - Fix crash in awn-manager if colormap == None. Thanks Emme for the 
-     patch. (Closes: #482030) 
+   - Fix crash in awn-manager if colormap == None. Thanks Emme for the
+     patch. (Closes: #482030)
 
  -- Julien Lavergne <julien.lavergne@gmail.com>  Sat, 24 May 2008 14:42:01 +0200
 
 avant-window-navigator (0.2.6-5) unstable; urgency=low
 
   * debian/control
-   - Drop the depends of awn-data on awn binary to avoid circular dependency. 
+   - Drop the depends of awn-data on awn binary to avoid circular dependency.
      Only the depends of awn on awn-data is needed. (Closes: #478709).
    - Add a debug binary.
   * debian rules
@@ -345,7 +345,7 @@ avant-window-navigator (0.2.6-4) unstable; urgency=medium
   * debian/patches/03-python-import.patch : Import correct version of python
     at runtime. Thanks Luca Bruno for the patch. (Closes: #476400, #476829)
   * debian/control
-   - Set dbus-x11 as Recommends rather than Depends, not needed if D-Bus 
+   - Set dbus-x11 as Recommends rather than Depends, not needed if D-Bus
      is running.
    - Add awn-applets-c-core and awn-applets-python-core to Recommends to
      install a set of applets.
@@ -381,12 +381,12 @@ avant-window-navigator (0.2.6-1) unstable; urgency=low
    - Drop 02-Fix-encode-in-desktop.patch, merged upstream.
    - 01-gconf-not-empty.patch: Don't install gconf schemas with empty entries.
   * debian/control:
-   - Add gtk-doc-tools, valac (>= 0.1.6) and python-elementtree Build-Depends 
+   - Add gtk-doc-tools, valac (>= 0.1.6) and python-elementtree Build-Depends
      needed by the new version.
    - Add doc-base Build-Depends for the documentation.
-   - Add binaries vala binding, libawn-doc and avant-window-navigator-data 
+   - Add binaries vala binding, libawn-doc and avant-window-navigator-data
      binaries.
-   - Add avant-window-navigator-data and dbus-x11 Depends for 
+   - Add avant-window-navigator-data and dbus-x11 Depends for
      avant-window-navigator.
    - Add python-awn Depends for awn-manager.
    - Add ${shlibs:Depends} to libawn-dev.
@@ -405,7 +405,7 @@ avant-window-navigator (0.2.6-1) unstable; urgency=low
    - Add awn-manager icon.
   * debian/avant-window-navigator.install
    - Add the gconf schemas.
-   - Move locales and images to avant-window-navigator-data, an 
+   - Move locales and images to avant-window-navigator-data, an
      arch-independent binary.
   * debian/libawn-dev
    - Install only *.h files.
@@ -421,7 +421,7 @@ avant-window-navigator (0.2.1-dfsg1-1) unstable; urgency=low
 
   * Initial release version (Closes: #428246)
   * debian/patches:
-   - 01-Fix-desktop-exec-path.patch : Fix lintian warning in 
+   - 01-Fix-desktop-exec-path.patch : Fix lintian warning in
   applets/taskman.desktop.in.in
    - 02-Fix-encode-in-desktop.patch : Remove Encoding in the *.desktop files
   * Original tarball repack due to the licence of the icon.
