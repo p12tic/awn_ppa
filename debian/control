@@ -18,9 +18,9 @@ Build-Depends: debhelper (>= 7.0.50~),
                libdesktop-agnostic-dev (>= 0.3.92),
                libdesktop-agnostic-bin,
                python-desktop-agnostic,
-               gtk-doc-tools, 
+               gtk-doc-tools,
                doc-base,
-               valac-0.10 (>= 0.9.1) | valac
+               valac-0.12
 Standards-Version: 3.9.2
 Homepage: https://launchpad.net/avant-window-navigator/
 Vcs-Git: git://github.com/gilir/awn-debian.git
@@ -33,21 +33,23 @@ Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends},
          avant-window-navigator-data (>= ${source:Version}),
+         libdesktop-agnostic-bin,
          libdesktop-agnostic-vfs,
          libdesktop-agnostic-fdo,
-         libdesktop-agnostic-cfg,
+         libdesktop-agnostic-cfg-gconf,
          dbus-x11
 Recommends: awn-applets-python-core,
             awn-applets-c-core,
             awn-settings (>= ${source:Version}),
             dockmanager,
             metacity (>= 2.21.5) | xcompmgr | compiz | xfwm4 (>= 4.2) | kde-window-manager (>= 4:4.0.0) | mutter
+Conflicts: libdesktop-agnostic-cfg-keyfile
 Breaks: awn-applets-c-core (<<  0.3.9~bzr1890)
 Replaces: awn-applets-c-core (<<  0.3.9~bzr1890)
 Description: MacOS X like panel for GNOME
  Avant-window-navigator (Awn) is a MacOS X like panel for the GNOME Desktop
- written in C.  In addition to launchers that can be dragged onto the bar, 
- it features a taskbar that behaves similarly to the Mac OSX dock. The window 
+ written in C.  In addition to launchers that can be dragged onto the bar,
+ it features a taskbar that behaves similarly to the Mac OSX dock. The window
  navigator uses the composite extension for transparency and other effects.
 
 Package: avant-window-navigator-data
@@ -65,7 +67,7 @@ Depends: ${shlibs:Depends},
          ${misc:Depends}
 Suggests: metacity (>= 2.21.5) | xcompmgr | compiz | xfwm4 (>= 4.2) | kde-window-manager (>= 4:4.0.0) | mutter
 Description: library for avant-window-navigator
- This library is used by avant-window-navigator and its applets. It provides 
+ This library is used by avant-window-navigator and its applets. It provides
  functions to create the bar and the applets.
 
 Package: libawn-doc
@@ -94,7 +96,7 @@ Description: library for avant-window-navigator - development files
 
 Package: awn-settings
 Architecture: all
-Depends: ${python:Depends}, 
+Depends: ${python:Depends},
          ${misc:Depends},
          gnome-menus,
          librsvg2-common,
@@ -119,8 +121,8 @@ Depends: libawn1 (= ${binary:Version}),
          ${python:Depends},
          python-gtk2,
          python-desktop-agnostic
-Description: Python bindings for avant-window-navigator library 
- This library is used by avant-window-navigator. It provides Python bindings 
+Description: Python bindings for avant-window-navigator library
+ This library is used by avant-window-navigator. It provides Python bindings
  to create and use Python applets for avant-window-navigator.
 
 Package: libawn1-dbg
@@ -132,7 +134,7 @@ Depends: libawn1 (= ${binary:Version}),
 Conflicts: libawn0-dbg
 Replaces: libawn0-dbg
 Description: library for avant-window-navigator - debug package
- This library is used by avant-window-navigator and its applets. It provides 
+ This library is used by avant-window-navigator and its applets. It provides
  functions to create the bar and the applets.
  .
  This package contains the debugging symbols.
